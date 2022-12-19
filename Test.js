@@ -14,3 +14,6 @@ movies
 .filter((element) => element.year === 2018 && element.rating > 4)
 .sort((a,b) => (a.rating < b.rating) ? 1 : -1)
 .map((e) => console.log(e.title))
+
+console.log(x)
+const x = 10 
