@@ -323,3 +323,56 @@ movies
 .map((e) => console.log(e.title))
 
 //----------------------------------------------------------------
+
+function sum(...args){
+  return args.flat(Infinity).reduce((a,b) => a + b);
+  // if (Array.isArray(x))
+  //   return x.reduce((a,b) => a + b);
+  // return x
+}
+
+console.log(sum(1,2,3,4))
+console.log(sum({}))
+
+//console.log(Array.isArray(sum(1,2,3,4)));
+
+//----------------------------------------------------------------
+
+let circle = {
+  radius: 1,
+  get area(){
+    return Math.PI * this.radius * this.radius
+  }
+}
+
+circle.radius = 1; // read and write
+console.log(circle.area) // only read
+
+//----------------------------------------------------------------
+function countOccurrences(array, seachElement){
+  if(!Array.isArray(array))
+    throw new Error('argument is not array');
+    
+  return array.reduce((times, element) => {
+    if(element === seachElement) {
+      times += 1;
+    } 
+    return times
+  },0)
+}
+
+const arr = [1, 2, 1, 4];
+try {
+  const counting = countOccurrences(arr, 1);
+  console.log(counting);
+}
+catch(e){
+  console.log(e.message);
+}
+
+try{
+  console.log(countOccurrences(true, 3));
+}
+catch(e){
+  console.log(e.message)
+}
